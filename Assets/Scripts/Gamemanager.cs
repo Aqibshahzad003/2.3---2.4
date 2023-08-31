@@ -55,6 +55,15 @@ public class Gamemanager : MonoBehaviour
         heart--; //decreasing heart amount by one
         hearttext.text = heart.ToString(); //converting it to string for showing it as text on display
     }
+    public void IncreaceLife()
+    {
+        if (heart < 3)
+        {
+            heart++;
+            hearttext.text = heart.ToString(); //converting it to string for showing it as text on display
+            audioSource.PlayOneShot(starclip);
+        }
+    }
     public void GameOver()
     {
         //activating gameoverpanel

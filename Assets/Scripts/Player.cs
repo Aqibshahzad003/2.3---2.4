@@ -43,6 +43,11 @@ public class Player : MonoBehaviour
             gamemanager.Addstar();
             Destroy(other.gameObject); //in the end destroying the gameobject i.e Star
         }
+        if(other.gameObject.tag =="Heart")
+        {
+            gamemanager.IncreaceLife();
+            Destroy(other.gameObject);
+        }
         if(other.gameObject.tag =="Bar")
         {
             Debug.Log("Bar");// debuging for testing
@@ -62,7 +67,9 @@ public class Player : MonoBehaviour
 
             gamemanager.SlowMo();//Doing the slowmo 
            
-            gamemanager.Decreaselife(); //Finally decreasing the heart life by 1
+            gamemanager.Decreaselife(); // decreasing the heart life by 1
+
+            Destroy(other.gameObject,3f); //Finally destroying the gameobject by 3 sec later
         }
     }
 }
